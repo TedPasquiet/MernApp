@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
 
-const PostSchema = mongoose.Schema(
+const postSchema = mongoose.Schema(
   {
     userId: {
       type: String,
       required: true,
     },
-    fistName: {
+    firstName: {
       type: String,
       required: true,
     },
@@ -23,12 +23,13 @@ const PostSchema = mongoose.Schema(
       of: Boolean,
     },
     comments: {
-      types: Array,
+      type: Array,
       default: [],
     },
   },
   { timestamps: true }
 );
 
-const Post = mongoose.model("Post", PostSchema);
+const Post = mongoose.model("Post", postSchema);
+
 export default Post;
